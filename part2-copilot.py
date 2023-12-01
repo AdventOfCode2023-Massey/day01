@@ -5,8 +5,11 @@
 # The initial solution assumed that the words and numbers
 # could be obtained by splitting on whitespace.
 
-# This solution uses REs, but still assumes word boundaries
+# The next solution used REs, but still assumed word boundaries
 # for the digits and spelled out words.
+
+# This solution removes the word boundary checks. It still gives
+# a wrong answer.
 
 import re
 
@@ -19,7 +22,7 @@ def sum_calibration_values_from_file(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             first_digit = last_digit = None
-            for word in re.findall(r'\b(?:one|two|three|four|five|six|seven|eight|nine|\d)\b', line):
+            for word in re.findall(r'(?:one|two|three|four|five|six|seven|eight|nine|\d)', line):
                 if word.isdigit():
                     if first_digit is None:
                         first_digit = word
