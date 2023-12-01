@@ -12,6 +12,7 @@
 # a wrong answer.
 
 import re
+import sys
 
 def sum_calibration_values_from_file(file_path):
     digit_map = {
@@ -35,4 +36,6 @@ def sum_calibration_values_from_file(file_path):
                 total += int(first_digit + last_digit)
     return total
 
-print(sum_calibration_values_from_file('input.txt'))
+if __name__ == "__main__":
+    filename = sys.argv[1]
+    print(sum_calibration_values_from_file(filename))
