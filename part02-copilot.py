@@ -2,8 +2,13 @@
 # Code by Github Copilot Chat
 # Editing by Bart Massey
 
-# This initial solution assumes that the words and numbers
+# The initial solution assumed that the words and numbers
 # could be obtained by splitting on whitespace.
+
+# This solution uses REs, but still assumes word boundaries
+# for the digits and spelled out words.
+
+import re
 
 def sum_calibration_values_from_file(file_path):
     digit_map = {
@@ -14,7 +19,7 @@ def sum_calibration_values_from_file(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             first_digit = last_digit = None
-            for word in line.split():
+            for word in re.findall(r'\b(?:one|two|three|four|five|six|seven|eight|nine|\d)\b', line):
                 if word.isdigit():
                     if first_digit is None:
                         first_digit = word
