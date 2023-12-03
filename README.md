@@ -1,5 +1,7 @@
 # Day 01
-Bart Massey
+GitHub Copilot and Bart Massey
+
+---
 
 Got GitHub Copilot Chat up and running. It immediately
 solved Part 1 in Python, which appears to be its preferred
@@ -31,3 +33,15 @@ pain, though.
 
 I give Copilot 4 of 5 on this. Have to deduct a point for
 assuming word boundaries when the example didn't have them.
+
+---
+
+Solution to [this problem](https://adventofcode.com/2023/day/3).
+
+Save your problem input to `input.txt` and run as appropriate.
+
+---
+
+This program is licensed under the "MIT License".
+Please see the file LICENSE in this distribution
+for license terms.
